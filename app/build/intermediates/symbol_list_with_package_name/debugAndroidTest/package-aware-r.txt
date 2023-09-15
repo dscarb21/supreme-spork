@@ -1,0 +1,3 @@
+com.david.gridsim.test
+style WhiteBackgroundDialogTheme
+style WhiteBackgroundTheme

@@ -1,0 +1,6 @@
+com.david.gridsim.test.app-annotation-experimental-1.3.0-0 C:\Users\David\.gradle\caches\transforms-3\20950aba1c926ba887c70028c7b332ad\transformed\annotation-experimental-1.3.0\res
+com.david.gridsim.test.app-core-1.5.0-1 C:\Users\David\.gradle\caches\transforms-3\55fc0ee08734532785d302f91c03f611\transformed\core-1.5.0\res
+com.david.gridsim.test.app-androidTest-2 D:\DAVID GIT\gridsim\app\build\generated\res\resValues\androidTest\debug
+com.david.gridsim.test.app-mergeDebugAndroidTestResources-3 D:\DAVID GIT\gridsim\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+com.david.gridsim.test.app-mergeDebugAndroidTestResources-4 D:\DAVID GIT\gridsim\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+com.david.gridsim.test.app-merged_res-5 D:\DAVID GIT\gridsim\app\build\intermediates\merged_res\debugAndroidTest
