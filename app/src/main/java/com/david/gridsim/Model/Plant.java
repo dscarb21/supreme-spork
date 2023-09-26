@@ -13,11 +13,14 @@ public class Plant extends GridCell {
             return R.drawable.tree;
         } else if (rawServerValue > 1000 && rawServerValue < 2000) {
             return R.drawable.bushes;
-        } else if (rawServerValue == 2002 || rawServerValue == 2003 || rawServerValue == 3000) {
-            // You can further differentiate between clover, mushroom, sunflower based on the value
-            return R.drawable.blank; // Default plant image
+        } else if (rawServerValue == 2002) {
+            return R.drawable.clover;
+        } else if (rawServerValue == 2003) {
+            return R.drawable.mushroom;
+        } else if (rawServerValue == 3000) {
+            return R.drawable.sunflower;
         }
-        return R.drawable.blank; // Default: Empty cell
+        return R.drawable.blank;
     }
 
     @Override

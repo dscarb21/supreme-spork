@@ -59,7 +59,7 @@ public class SimGridView {
             if (gridView != null && gridView.getSelectedItemPosition() != AdapterView.INVALID_POSITION) {
                 int selectedPosition = gridView.getSelectedItemPosition();
                 GridCell selectedCell = simulationGrid.getCell(selectedPosition);
-                String output = "Type: " + selectedCell.getCellType() + "\n" + selectedCell.getCellInfo();
+                String output = "Selected " + selectedCell.getCellType() + "\n" + selectedCell.getCellInfo();
                 textView.setText(output);
             }
         } catch (Exception e) {

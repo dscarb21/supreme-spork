@@ -23,8 +23,6 @@ import com.david.gridsim.Model.SimulationGrid;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import androidx.appcompat.app.AppCompatActivity;
-import java.util.ArrayList;
-import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 

@@ -34,7 +34,7 @@ public class GardenerItem extends GridCell {
     @Override
     public String getCellInfo() {
         int gardenerId = calculateGardenerID();
-        return getCellType() + " (ID: " + gardenerId + ") at Row: " + row + ", Col: " + col;
+        return getCellType() + " Gardener ID: " + gardenerId + " at Row: " + row + ", Col: " + col;
     }
 
     private int calculateGardenerID() {
