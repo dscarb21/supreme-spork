@@ -6,27 +6,29 @@ public class Plant extends GridCell {
     public Plant(int rawServerValue, int row, int col) {
         super(rawServerValue, row, col);
     }
+
+    @Override
     public Integer getResourceID() {
-        // Determine which plant image to use based on rawServerValue
-        int val = getServerValue();
-        if (val == 1000) {
+        if (rawServerValue == 1000) {
             return R.drawable.tree;
-        } else if (val >= 1000 && val <= 2000) {
+        } else if (rawServerValue > 1000 && rawServerValue < 2000) {
             return R.drawable.bushes;
-        } else if (val == 2002 || val == 2003 || val == 3000) {// Replace with your actual resource ID for bushes
-            return R.drawable.clover; // Replace with your actual resource ID for clover
-        } else {
-            return R.drawable.blank; // Replace with your actual default resource ID
+        } else if (rawServerValue == 2002 || rawServerValue == 2003 || rawServerValue == 3000) {
+            // You can further differentiate between clover, mushroom, sunflower based on the value
+            return R.drawable.blank; // Default plant image
         }
+        return R.drawable.blank; // Default: Empty cell
     }
 
     @Override
     public String getCellType() {
-        return "Plant";
-    }
-
-    @Override
-    public String getCellInfo() {
-        return "Plant at Row: " + getRow() + ", Col: " + getCol();
+        if (rawServerValue == 1000) {
+            return "Tree";
+        } else if (rawServerValue > 1000 && rawServerValue < 2000) {
+            return "Bushes";
+        } else if (rawServerValue == 2002 || rawServerValue == 2003 || rawServerValue == 3000) {
+            return "Plant";
+        }
+        return "Empty Cell";
     }
 }

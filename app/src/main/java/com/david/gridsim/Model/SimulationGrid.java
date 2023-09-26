@@ -10,6 +10,8 @@ public class SimulationGrid {
     private List<GridCell> gridCells;
     private int numRows;
     private int numCols;
+    private GridCellFactory gridCellFactory = new GridCellFactory(); // Create an instance of GridCellFactory
+
 
     public SimulationGrid(int numRows, int numCols) {
         this.numRows = numRows;
@@ -32,6 +34,11 @@ public class SimulationGrid {
     public int getNumRows() {
         return numRows;
     }
+
+    public List<GridCell> getGridCells() {
+        return gridCells;
+    }
+
 
     public int getNumCols() {
         return numCols;
@@ -58,7 +65,7 @@ public class SimulationGrid {
             JSONArray row = arr.getJSONArray(i);
             for (int j = 0; j < row.length(); j++) {
                 int value = row.getInt(j);
-                GridCell cell = new GridCell(value, i, j);
+                GridCell cell = gridCellFactory.makeCell(value, i, j); // Use makeCell here
                 gridCells.add(cell);
             }
         }

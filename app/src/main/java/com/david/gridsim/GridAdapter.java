@@ -7,11 +7,15 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 
-import java.util.List;
+import com.david.gridsim.Model.SimulationGrid;
+import com.david.gridsim.Model.GridCell;
 
-public class GridAdapter extends ArrayAdapter<Integer> {
-    public GridAdapter(Context context, int resource, List<Integer> objects) {
-        super(context, resource, objects);
+public class GridAdapter extends ArrayAdapter<GridCell> {
+    private SimulationGrid simulationGrid;
+
+    public GridAdapter(Context context, int resource, SimulationGrid simulationGrid) {
+        super(context, resource, simulationGrid.getGridCells());
+        this.simulationGrid = simulationGrid;
     }
 
     @Override
@@ -21,15 +25,9 @@ public class GridAdapter extends ArrayAdapter<Integer> {
         }
 
         ImageView imageView = convertView.findViewById(R.id.grid_item_image);
-        int value = getItem(position);
-
-        if (value == 0) {
-            imageView.setImageResource(R.drawable.image1);
-        } else {
-            imageView.setImageResource(R.drawable.image2);
-        }
+        GridCell cell = getItem(position);
+        imageView.setImageResource(cell.getResourceID());
 
         return convertView;
     }
 }
-

@@ -8,11 +8,18 @@ import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.TimeoutError;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.david.gridsim.Model.GridCell;
+import com.david.gridsim.Model.GridCellFactory;
+import com.david.gridsim.Model.SimulationGrid;
+
 import org.json.JSONArray;
 import org.json.JSONObject;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,18 +28,22 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private List<Integer> items;
+    private SimulationGrid simulationGrid;
     private GridView gridView;
+    private SimGridView simGridView;
     private TextView textView;
+    private GridCellFactory gridCellFactory = new GridCellFactory();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        items = new ArrayList<>(256); // 16 x 16 = 256 cells
-        gridView = findViewById(R.id.gridView);
+        // Initialize the components
         textView = findViewById(R.id.textView);
+        gridView = findViewById(R.id.gridView);
+
+        simGridView = new SimGridView();
 
         fetchGridData();
         initializeButtons();
@@ -40,6 +51,12 @@ public class MainActivity extends AppCompatActivity {
         if (savedInstanceState != null) {
             textView.setText(savedInstanceState.getString("textViewContent"));
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        simGridView.attach(textView, gridView);
     }
 
     @Override
@@ -58,14 +75,31 @@ public class MainActivity extends AppCompatActivity {
         RequestQueue queue = Volley.newRequestQueue(this);
         String url = "http://stman1.cs.unh.edu:6191/games";
 
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null, this::handleResponse, this::handleError);
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
+                this::handleResponse,
+                error -> {
+                    // Handle the error
+                    if (error instanceof TimeoutError || error instanceof NoConnectionError) {
+                        Toast.makeText(getApplicationContext(), "Network timeout or no connection", Toast.LENGTH_LONG).show();
+                    } else {
+                        Toast.makeText(getApplicationContext(), "Unknown error occurred", Toast.LENGTH_LONG).show();
+                    }
+                    Log.e("Volley Error", "Error occurred", error);
+                }
+        );
 
         queue.add(jsonObjectRequest);
+        Log.e("JSON", jsonObjectRequest.toString());
+
     }
 
+
     private void handleResponse(JSONObject response) {
+        Log.d("JSON", "Response received: " + response.toString());
         try {
-            populateGrid(response);
+            JSONArray grid = response.getJSONArray("grid");
+            simGridView.setUsingJSON(grid);
+            this.simulationGrid = simGridView.getSimulationGrid();
             setGridAdapter();
             setGridClickListener();
         } catch (Exception e) {
@@ -73,23 +107,8 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private void handleError(VolleyError error) {
-        Log.e("Volley Error", "Error occurred", error);
-        Toast.makeText(getApplicationContext(), "Error: " + error.getMessage(), Toast.LENGTH_LONG).show();
-    }
-
-    private void populateGrid(JSONObject response) throws Exception {
-        JSONArray grid = response.getJSONArray("grid");
-        for (int i = 0; i < grid.length(); i++) {
-            JSONArray row = grid.getJSONArray(i);
-            for (int j = 0; j < row.length(); j++) {
-                items.add(row.getInt(j));
-            }
-        }
-    }
-
     private void setGridAdapter() {
-        GridAdapter adapter = new GridAdapter(this, R.layout.grid_item, items);
+        GridAdapter adapter = new GridAdapter(this, R.layout.grid_item, simulationGrid);
         gridView.setAdapter(adapter);
     }
 
@@ -97,17 +116,14 @@ public class MainActivity extends AppCompatActivity {
         gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                int clickedValue = items.get(position);
-                String output = "Value: " + clickedValue + "\nPosition: " + position;
-                if (clickedValue != 0) {
-                    output = "Non-Zero " + output;
-                }
+                GridCell clickedCell = simulationGrid.getCell(position);
+                String output = "Type: " + clickedCell.getCellType() + "\n" + clickedCell.getCellInfo();
                 textView.setText(output);
-                Log.d("gridView", Integer.toString(position));
+                Log.d("gridView", "Position: " + position + ", Type: " + clickedCell.getCellType());
             }
         });
-
     }
+
 
     private void initializeButtons() {
         Button button1 = findViewById(R.id.button1);
