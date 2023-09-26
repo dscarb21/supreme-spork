@@ -2,10 +2,17 @@ R_DEF: Internal format may change without notice
 local
 color black
 color white
+drawable blank
+drawable bushes
+drawable clover
+drawable gardender_icon
+drawable golfcart_icon
 drawable ic_launcher_background
 drawable ic_launcher_foreground
-drawable image1
-drawable image2
+drawable mushroom
+drawable shovel_icon
+drawable sunflower
+drawable tree
 id button1
 id button2
 id gridView
