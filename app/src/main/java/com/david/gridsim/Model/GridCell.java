@@ -22,6 +22,6 @@ public class GridCell {
     }
 
     public String getCellInfo() {
-        return "Row: " + row + ", Col: " + col;
+        return "Selected " + getCellType() + "\nLocation: (" + col + ", " + row +")";
     }
 }

@@ -1,5 +1,7 @@
 package com.david.gridsim.Model;
 
+import android.util.Log;
+
 import com.david.gridsim.R;
 
 public class GardenerItem extends GridCell {
@@ -34,10 +36,12 @@ public class GardenerItem extends GridCell {
     @Override
     public String getCellInfo() {
         int gardenerId = calculateGardenerID();
-        return getCellType() + " Gardener ID: " + gardenerId + " at Row: " + row + ", Col: " + col;
+        return "Selected " + getCellType() + "\nLocation: (" + col + ", " + row +")" + "\nGardener ID: " + gardenerId;
     }
 
     private int calculateGardenerID() {
-        return rawServerValue % 1000000; // Extracting the GID from the raw value
+        Log.e("ServerVal", Integer.toString(rawServerValue));
+        return (rawServerValue / 1000) % 1000; // Extracting the GID from the raw value
     }
+
 }

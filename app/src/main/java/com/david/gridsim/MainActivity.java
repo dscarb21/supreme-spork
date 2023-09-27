@@ -2,45 +2,33 @@ package com.david.gridsim;
 
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.android.volley.NoConnectionError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.TimeoutError;
-import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.david.gridsim.Model.GridCell;
-import com.david.gridsim.Model.GridCellFactory;
-import com.david.gridsim.Model.SimulationGrid;
-
 import org.json.JSONArray;
 import org.json.JSONObject;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    private SimulationGrid simulationGrid;
     private GridView gridView;
     private SimGridView simGridView;
     private TextView textView;
-    private GridCellFactory gridCellFactory = new GridCellFactory();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        // Initialize the components
         textView = findViewById(R.id.textView);
         gridView = findViewById(R.id.gridView);
-
         simGridView = new SimGridView();
 
         fetchGridData();
@@ -91,37 +79,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     private void handleResponse(JSONObject response) {
         Log.d("JSON", "Response received: " + response.toString());
         try {
             JSONArray grid = response.getJSONArray("grid");
             simGridView.setUsingJSON(grid);
-            this.simulationGrid = simGridView.getSimulationGrid();
-            setGridAdapter();
-            setGridClickListener();
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
-
-    private void setGridAdapter() {
-        GridAdapter adapter = new GridAdapter(this, R.layout.grid_item, simulationGrid);
-        gridView.setAdapter(adapter);
-    }
-
-    private void setGridClickListener() {
-        gridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                GridCell clickedCell = simulationGrid.getCell(position);
-                String output = "Type: " + clickedCell.getCellType() + "\n" + clickedCell.getCellInfo();
-                textView.setText(output);
-                Log.d("gridView", "Position: " + position + ", Type: " + clickedCell.getCellType());
-            }
-        });
-    }
-
 
     private void initializeButtons() {
         Button button1 = findViewById(R.id.button1);

@@ -11,11 +11,9 @@ import com.david.gridsim.Model.SimulationGrid;
 import com.david.gridsim.Model.GridCell;
 
 public class GridAdapter extends ArrayAdapter<GridCell> {
-    private SimulationGrid simulationGrid;
 
     public GridAdapter(Context context, int resource, SimulationGrid simulationGrid) {
         super(context, resource, simulationGrid.getGridCells());
-        this.simulationGrid = simulationGrid;
     }
 
     @Override

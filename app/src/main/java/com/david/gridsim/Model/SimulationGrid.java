@@ -1,5 +1,12 @@
 package com.david.gridsim.Model;
 
+import android.util.Log;
+import android.widget.GridView;
+import android.widget.TextView;
+
+import com.david.gridsim.GridAdapter;
+import com.david.gridsim.R;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 
@@ -10,13 +17,38 @@ public class SimulationGrid {
     private List<GridCell> gridCells;
     private int numRows;
     private int numCols;
-    private GridCellFactory gridCellFactory = new GridCellFactory(); // Create an instance of GridCellFactory
-
+    private GridCellFactory gridCellFactory = new GridCellFactory();
+    private GridView gridView;
+    private TextView textView;
+    private GridAdapter gridAdapter;
 
     public SimulationGrid(int numRows, int numCols) {
         this.numRows = numRows;
         this.numCols = numCols;
         this.gridCells = new ArrayList<>(numRows * numCols);
+    }
+
+    public void attach(TextView tview, GridView gview) {
+        this.textView = tview;
+        this.gridView = gview;
+        gridAdapter = new GridAdapter(gridView.getContext(), R.layout.grid_item, this);
+        gridView.setAdapter(gridAdapter);
+
+
+        gridView.setOnItemClickListener((parent, view, position, id) -> {
+            GridCell clickedCell = getCell(position);
+            String output = clickedCell.getCellInfo();
+            textView.setText(output);
+        });
+
+    }
+
+    public void invalidateViews() {
+        if (gridView != null) {
+            gridView.invalidateViews();
+        } else {
+            Log.e("SimulationGrid", "gridView NULL");
+        }
     }
 
     public GridCell getCell(int index) {
@@ -50,11 +82,6 @@ public class SimulationGrid {
         }
     }
 
-    public void setCell(int row, int col, GridCell cell) {
-        int index = row * numCols + col;
-        setCell(index, cell);
-    }
-
     public int size() {
         return gridCells.size();
     }
@@ -65,7 +92,7 @@ public class SimulationGrid {
             JSONArray row = arr.getJSONArray(i);
             for (int j = 0; j < row.length(); j++) {
                 int value = row.getInt(j);
-                GridCell cell = gridCellFactory.makeCell(value, i, j); // Use makeCell here
+                GridCell cell = gridCellFactory.makeCell(value, i, j);
                 gridCells.add(cell);
             }
         }

@@ -9,6 +9,6 @@ public class GridCellFactory {
         } else if ((val >= 1000000 && val < 2000000) || (val >= 2000000 && val < 3000000) || (val >= 10000000 && val < 20000000)) {
             return new GardenerItem(val, row, col);
         }
-        return new GridCell(val, row, col); // Default
+        return new GridCell(val, row, col);
     }
 }
