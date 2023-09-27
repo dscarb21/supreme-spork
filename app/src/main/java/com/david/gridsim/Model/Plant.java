@@ -5,33 +5,25 @@ import com.david.gridsim.R;
 public class Plant extends GridCell {
     public Plant(int rawServerValue, int row, int col) {
         super(rawServerValue, row, col);
-    }
 
-    @Override
-    public Integer getResourceID() {
         if (rawServerValue == 1000) {
-            return R.drawable.tree;
+            this.resourceID = R.drawable.tree;
+            this.cellType = "Tree";
         } else if (rawServerValue > 1000 && rawServerValue < 2000) {
-            return R.drawable.bushes;
+            this.resourceID = R.drawable.bushes;
+            this.cellType = "Bushes";
         } else if (rawServerValue == 2002) {
-            return R.drawable.clover;
+            this.resourceID = R.drawable.clover;
+            this.cellType = "Clover";
         } else if (rawServerValue == 2003) {
-            return R.drawable.mushroom;
+            this.resourceID = R.drawable.mushroom;
+            this.cellType = "Mushroom";
         } else if (rawServerValue == 3000) {
-            return R.drawable.sunflower;
+            this.resourceID = R.drawable.sunflower;
+            this.cellType = "Sunflower";
+        } else {
+            this.resourceID = R.drawable.blank;
+            this.cellType = "Blank";
         }
-        return R.drawable.blank;
-    }
-
-    @Override
-    public String getCellType() {
-        if (rawServerValue == 1000) {
-            return "Tree";
-        } else if (rawServerValue > 1000 && rawServerValue < 2000) {
-            return "Bushes";
-        } else if (rawServerValue == 2002 || rawServerValue == 2003 || rawServerValue == 3000) {
-            return "Plant";
-        }
-        return "Empty Cell";
     }
 }
