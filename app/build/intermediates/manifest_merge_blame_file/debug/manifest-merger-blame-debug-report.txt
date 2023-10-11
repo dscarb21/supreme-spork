@@ -13,7 +13,7 @@
 11-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:4:22-64
 12
 13    <application
-13-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:5:5-25:19
+13-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:5:5-26:19
 14        android:allowBackup="true"
 14-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:7:9-35
 15        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -32,49 +32,53 @@
 22-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:12:9-54
 23        android:supportsRtl="true"
 23-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:13:9-35
-24        android:theme="@style/Theme.GridSim"
-24-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:14:9-45
-25        android:usesCleartextTraffic="true" >
-25-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:6:9-44
-26        <activity
-26-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:16:9-24:20
-27            android:name="com.david.gridsim.MainActivity"
-27-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:17:13-41
-28            android:exported="true" >
-28-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:18:13-36
-29            <intent-filter>
-29-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:19:13-23:29
-30                <action android:name="android.intent.action.MAIN" />
-30-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:20:17-69
-30-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:20:25-66
-31
-32                <category android:name="android.intent.category.LAUNCHER" />
-32-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:22:17-77
-32-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:22:27-74
-33            </intent-filter>
-34        </activity>
-35
-36        <provider
-36-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
-37            android:name="androidx.startup.InitializationProvider"
-37-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
-38            android:authorities="com.david.gridsim.androidx-startup"
-38-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
-39            android:exported="false" >
-39-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
-40            <meta-data
-40-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
-41                android:name="androidx.emoji2.text.EmojiCompatInitializer"
-41-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
-42                android:value="androidx.startup" />
-42-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
-43            <meta-data
-43-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\David\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
-44                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
-44-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\David\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
-45                android:value="androidx.startup" />
-45-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\David\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
-46        </provider>
-47    </application>
-48
-49</manifest>
+24        android:testOnly="true"
+25        android:theme="@style/Theme.GridSim"
+25-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:14:9-45
+26        android:usesCleartextTraffic="true" >
+26-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:6:9-44
+27        <activity android:name="com.david.gridsim.DetailsActivity" />
+27-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:16:9-53
+27-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:16:19-50
+28        <activity
+28-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:17:9-25:20
+29            android:name="com.david.gridsim.MainActivity"
+29-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:18:13-41
+30            android:exported="true" >
+30-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:19:13-36
+31            <intent-filter>
+31-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:20:13-24:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:21:17-69
+32-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:21:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:23:17-77
+34-->D:\DAVID GIT\gridsim\app\src\main\AndroidManifest.xml:23:27-74
+35            </intent-filter>
+36        </activity>
+37
+38        <provider
+38-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:24:9-32:20
+39            android:name="androidx.startup.InitializationProvider"
+39-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:25:13-67
+40            android:authorities="com.david.gridsim.androidx-startup"
+40-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:26:13-68
+41            android:exported="false" >
+41-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:27:13-37
+42            <meta-data
+42-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:29:13-31:52
+43                android:name="androidx.emoji2.text.EmojiCompatInitializer"
+43-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:30:17-75
+44                android:value="androidx.startup" />
+44-->[androidx.emoji2:emoji2:1.2.0] C:\Users\David\.gradle\caches\transforms-3\9ec162b5cb5dad7a953e18733a42dbca\transformed\emoji2-1.2.0\AndroidManifest.xml:31:17-49
+45            <meta-data
+45-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\David\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:31:13-33:52
+46                android:name="androidx.lifecycle.ProcessLifecycleInitializer"
+46-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\David\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:32:17-78
+47                android:value="androidx.startup" />
+47-->[androidx.lifecycle:lifecycle-process:2.4.1] C:\Users\David\.gradle\caches\transforms-3\4eb4b953398cff91e70e367f7f0f5a04\transformed\lifecycle-process-2.4.1\AndroidManifest.xml:33:17-49
+48        </provider>
+49    </application>
+50
+51</manifest>

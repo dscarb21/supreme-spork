@@ -1,26 +1,20 @@
 package com.david.gridsim;
 
 import android.os.Bundle;
-import android.util.Log;
 import android.widget.Button;
 import android.widget.GridView;
 import android.widget.TextView;
 import android.widget.Toast;
-import com.android.volley.NoConnectionError;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.TimeoutError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import androidx.appcompat.app.AppCompatActivity;
+import android.content.Intent;
+
 
 public class MainActivity extends AppCompatActivity {
 
     private GridView gridView;
     private SimGridView simGridView;
     private TextView textView;
+    private Poller poller;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
         gridView = findViewById(R.id.gridView);
         simGridView = new SimGridView();
 
-        fetchGridData();
+        poller = Poller.getInstance();
+        poller.startPolling(this);
+
         initializeButtons();
 
         if (savedInstanceState != null) {
@@ -46,6 +42,12 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onStop() {
+        super.onStop();
+        poller.stopPolling(); // Stop polling when the activity is no longer visible
+    }
+
+    @Override
     protected void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
         outState.putString("textViewContent", textView.getText().toString());
@@ -57,43 +59,20 @@ public class MainActivity extends AppCompatActivity {
         textView.setText(savedInstanceState.getString("textViewContent"));
     }
 
-    private void fetchGridData() {
-        RequestQueue queue = Volley.newRequestQueue(this);
-        String url = "http://stman1.cs.unh.edu:6191/games";
-
-        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.GET, url, null,
-                this::handleResponse,
-                error -> {
-                    // Handle the error
-                    if (error instanceof TimeoutError || error instanceof NoConnectionError) {
-                        Toast.makeText(getApplicationContext(), "Network timeout or no connection", Toast.LENGTH_LONG).show();
-                    } else {
-                        Toast.makeText(getApplicationContext(), "Unknown error occurred", Toast.LENGTH_LONG).show();
-                    }
-                    Log.e("Volley Error", "Error occurred", error);
-                }
-        );
-
-        queue.add(jsonObjectRequest);
-        Log.e("JSON", jsonObjectRequest.toString());
-
-    }
-
-    private void handleResponse(JSONObject response) {
-        Log.d("JSON", "Response received: " + response.toString());
-        try {
-            JSONArray grid = response.getJSONArray("grid");
-            simGridView.setUsingJSON(grid);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
     private void initializeButtons() {
         Button button1 = findViewById(R.id.button1);
         Button button2 = findViewById(R.id.button2);
 
-        button1.setOnClickListener(v -> Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show());
-        button2.setOnClickListener(v -> Toast.makeText(this, "Right", Toast.LENGTH_SHORT).show());
+        button1.setOnClickListener(v -> simGridView.showDetailsForSelected());
+        button2.setOnClickListener(v -> {
+            if (simGridView.isPaused()) {
+                simGridView.resumeUpdates();
+                Toast.makeText(this, "Updates Resumed", Toast.LENGTH_SHORT).show();
+            } else {
+                simGridView.pauseUpdates();
+                Toast.makeText(this, "Updates Paused", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
+
 }

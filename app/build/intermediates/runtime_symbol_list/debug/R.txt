@@ -3161,6 +3161,7 @@ int id design_menu_item_action_area 0x7f080093
 int id design_menu_item_action_area_stub 0x7f080094
 int id design_menu_item_text 0x7f080095
 int id design_navigation_view 0x7f080096
+int id detailsTextView 0x7f0801f2
 int id dialog_button 0x7f080097
 int id dimensions 0x7f080098
 int id direct 0x7f080099
@@ -3621,6 +3622,7 @@ int layout abc_search_dropdown_item_icons_2line 0x7f0b0018
 int layout abc_search_view 0x7f0b0019
 int layout abc_select_dialog_material 0x7f0b001a
 int layout abc_tooltip 0x7f0b001b
+int layout activity_details 0x7f0b006b
 int layout activity_main 0x7f0b001c
 int layout custom_dialog 0x7f0b001d
 int layout design_bottom_navigation_item 0x7f0b001e

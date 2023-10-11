@@ -1,9 +1,11 @@
 package com.david.gridsim.Model;
 
+import android.content.Intent;
 import android.util.Log;
 import android.widget.GridView;
 import android.widget.TextView;
 
+import com.david.gridsim.DetailsActivity;
 import com.david.gridsim.GridAdapter;
 import com.david.gridsim.R;
 
@@ -18,9 +20,14 @@ public class SimulationGrid {
     private int numRows;
     private int numCols;
     private GridCellFactory gridCellFactory = new GridCellFactory();
+    private int selectedCellIndex = -1; // -1 means no cell is selected initially
+
     private GridView gridView;
     private TextView textView;
     private GridAdapter gridAdapter;
+    public boolean isPaused = false;
+
+    GridCell selectedCell = null;
 
     public SimulationGrid(int numRows, int numCols) {
         this.numRows = numRows;
@@ -34,13 +41,41 @@ public class SimulationGrid {
         gridAdapter = new GridAdapter(gridView.getContext(), R.layout.grid_item, this);
         gridView.setAdapter(gridAdapter);
 
-
         gridView.setOnItemClickListener((parent, view, position, id) -> {
+            selectedCellIndex = position;
             GridCell clickedCell = getCell(position);
+            selectedCell = clickedCell;
             String output = clickedCell.getCellInfo();
             textView.setText(output);
         });
+    }
 
+    public GridCell getSelectedCell() {
+        return selectedCell;
+    }
+
+    public void showDetailsForSelected() {
+        if (selectedCell != null) {
+            Intent intent = new Intent(gridView.getContext(), DetailsActivity.class);
+            intent.putExtra("cellInfo", selectedCell.getCellInfo());
+            gridView.getContext().startActivity(intent);
+        }
+    }
+
+    public void updateTextView(String info) {
+        if (textView != null) {
+            if (selectedCellIndex != -1) {
+                GridCell selectedCell = getCell(selectedCellIndex);
+                String cellInfo = selectedCell.getCellInfo();
+                // Update the TextView with the new cellInfo
+                textView.setText(cellInfo);
+            }
+        }
+    }
+
+
+    public void detach() {
+        // Placeholder for any cleanup tasks in the future
     }
 
     public void invalidateViews() {
@@ -58,42 +93,27 @@ public class SimulationGrid {
         return null;
     }
 
-    public GridCell getCell(int row, int col) {
-        int index = row * numCols + col;
-        return getCell(index);
-    }
-
-    public int getNumRows() {
-        return numRows;
-    }
-
     public List<GridCell> getGridCells() {
         return gridCells;
     }
 
-
-    public int getNumCols() {
-        return numCols;
-    }
-
-    public void setCell(int index, GridCell cell) {
-        if (index >= 0 && index < gridCells.size()) {
-            gridCells.set(index, cell);
-        }
-    }
 
     public int size() {
         return gridCells.size();
     }
 
     public void setUsingJSON(JSONArray arr) throws JSONException {
-        gridCells.clear();
+        if (!isPaused) {
+            gridCells.clear();
+        }
         for (int i = 0; i < arr.length(); i++) {
             JSONArray row = arr.getJSONArray(i);
             for (int j = 0; j < row.length(); j++) {
                 int value = row.getInt(j);
                 GridCell cell = gridCellFactory.makeCell(value, i, j);
-                gridCells.add(cell);
+                if (!isPaused) {
+                    gridCells.add(cell);
+                }
             }
         }
     }

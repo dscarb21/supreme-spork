@@ -2,7 +2,9 @@ package com.david.gridsim.Model;
 
 import com.david.gridsim.R;
 
-public class GridCell {
+import java.io.Serializable;
+
+public class GridCell  implements Serializable {
     protected int rawServerValue;
     protected int row;
     protected int col;

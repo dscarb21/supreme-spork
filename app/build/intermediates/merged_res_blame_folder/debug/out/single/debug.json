@@ -1,114 +1,118 @@
 [
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/layout-land_activity_main.xml.flat",
-        "source": "com.david.gridsim.app-main-30:/layout-land/activity_main.xml"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-hdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_ic_launcher_background.xml.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/ic_launcher_background.xml"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_gardender_icon.png.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\gardender_icon.png"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-xhdpi_ic_launcher.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-xhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\ic_launcher_foreground.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-xxhdpi_ic_launcher.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-xxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\xml\\backup_rules.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-xxxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-xxxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-xhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-mdpi_ic_launcher_round.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-mdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-xxxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_sunflower.png.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/sunflower.png"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_bushes.png.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\bushes.png"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/xml_backup_rules.xml.flat",
-        "source": "com.david.gridsim.app-main-30:/xml/backup_rules.xml"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_shovel_icon.png.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\shovel_icon.png"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_blank.png.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/blank.png"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-hdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-xxhdpi_ic_launcher_round.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-xxhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_golfcart_icon.png.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\golfcart_icon.png"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_golfcart_icon.png.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/golfcart_icon.png"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-anydpi_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-anydpi\\ic_launcher_round.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-anydpi_ic_launcher.xml.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-anydpi/ic_launcher.xml"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-mdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-hdpi_ic_launcher_round.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-hdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\layout-land_activity_main.xml.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\layout-land\\activity_main.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_ic_launcher_foreground.xml.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/ic_launcher_foreground.xml"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_clover.png.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\clover.png"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-xxxhdpi_ic_launcher.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-xxxhdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\xml\\data_extraction_rules.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_bushes.png.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/bushes.png"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-xxhdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-hdpi_ic_launcher.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-hdpi/ic_launcher.webp"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_tree.png.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\tree.png"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-mdpi_ic_launcher.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-mdpi/ic_launcher.webp"
+        "merged": "com.david.gridsim.app-merged_res-28:/layout_activity_details.xml.flat",
+        "source": "com.david.gridsim.app-main-30:/layout/activity_details.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/layout_grid_item.xml.flat",
-        "source": "com.david.gridsim.app-main-30:/layout/grid_item.xml"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\layout_grid_item.xml.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\layout\\grid_item.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-anydpi_ic_launcher_round.xml.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-anydpi/ic_launcher_round.xml"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_sunflower.png.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\sunflower.png"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/mipmap-xhdpi_ic_launcher_round.webp.flat",
-        "source": "com.david.gridsim.app-main-30:/mipmap-xhdpi/ic_launcher_round.webp"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-anydpi_ic_launcher.xml.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-anydpi\\ic_launcher.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_tree.png.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/tree.png"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/layout_activity_main.xml.flat",
-        "source": "com.david.gridsim.app-main-30:/layout/activity_main.xml"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_mushroom.png.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\mushroom.png"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_gardender_icon.png.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/gardender_icon.png"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\ic_launcher_background.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_mushroom.png.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/mushroom.png"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-xxhdpi\\ic_launcher.webp"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/xml_data_extraction_rules.xml.flat",
-        "source": "com.david.gridsim.app-main-30:/xml/data_extraction_rules.xml"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\drawable_blank.png.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\drawable\\blank.png"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_clover.png.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/clover.png"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\layout\\activity_main.xml"
     },
     {
-        "merged": "com.david.gridsim.app-merged_res-28:/drawable_shovel_icon.png.flat",
-        "source": "com.david.gridsim.app-main-30:/drawable/shovel_icon.png"
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-merged_res-28:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\David\\.gradle\\daemon\\8.0\\com.david.gridsim.app-main-30:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
     }
 ]

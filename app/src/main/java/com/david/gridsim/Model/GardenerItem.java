@@ -1,11 +1,16 @@
 package com.david.gridsim.Model;
 
-import android.util.Log;
-
 import com.david.gridsim.R;
 
-public class GardenerItem extends GridCell {
+import java.io.Serializable;
+import java.util.LinkedList;
+
+public class GardenerItem extends GridCell implements Serializable{
     private int gardenerId;
+    private LinkedList<String> movementHistory = new LinkedList<>();
+    private int lastRow = -1;  // Initialize to invalid values
+    private int lastCol = -1;
+
 
     public GardenerItem(int rawServerValue, int row, int col) {
         super(rawServerValue, row, col);
@@ -27,10 +32,28 @@ public class GardenerItem extends GridCell {
         this.gardenerId = calculateGardenerID();
     }
 
+
+    public void updateLocation(int newRow, int newCol) {
+        // Only add if coords are different from most recent entry
+        if (newRow != lastRow || newCol != lastCol) {
+            java.sql.Timestamp timestamp = new java.sql.Timestamp(System.currentTimeMillis());
+            String historyEntry = "(" + newRow + ", " + newCol + ") " + "[" + timestamp + "]";
+            movementHistory.add(historyEntry);
+
+            lastRow = newRow;
+            lastCol = newCol;
+        }
+    }
+
     @Override
     public String getCellInfo() {
-        return "Selected " + getCellType() + "\nLocation: (" + col + ", " + row +")" + "\nGardener ID: " + gardenerId;
+        StringBuilder info = new StringBuilder("Selected " + getCellType() + "\nLocation: (" + col + ", " + row +")" + "\nGardener ID: " + gardenerId);
+        for (String entry : movementHistory) {
+            info.append("\n").append(entry);
+        }
+        return info.toString();
     }
+
 
     private int calculateGardenerID() {
         // For 8-digit numbers (Cart)

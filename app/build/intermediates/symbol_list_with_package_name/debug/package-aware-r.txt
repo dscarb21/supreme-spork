@@ -3162,6 +3162,7 @@ id design_menu_item_action_area
 id design_menu_item_action_area_stub
 id design_menu_item_text
 id design_navigation_view
+id detailsTextView
 id dialog_button
 id dimensions
 id direct
@@ -3622,6 +3623,7 @@ layout abc_search_dropdown_item_icons_2line
 layout abc_search_view
 layout abc_select_dialog_material
 layout abc_tooltip
+layout activity_details
 layout activity_main
 layout custom_dialog
 layout design_bottom_navigation_item

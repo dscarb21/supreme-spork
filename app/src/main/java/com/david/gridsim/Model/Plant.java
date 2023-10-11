@@ -2,7 +2,9 @@ package com.david.gridsim.Model;
 
 import com.david.gridsim.R;
 
-public class Plant extends GridCell {
+import java.io.Serializable;
+
+public class Plant extends GridCell  implements Serializable {
     public Plant(int rawServerValue, int row, int col) {
         super(rawServerValue, row, col);
 

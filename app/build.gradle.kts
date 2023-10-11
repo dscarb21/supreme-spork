@@ -32,6 +32,9 @@ android {
 }
 
 dependencies {
+    testImplementation ("org.mockito:mockito-core:3.11.2")
+    testImplementation ("org.json:json:20201115")
+    implementation ("org.greenrobot:eventbus:3.2.0")
     implementation("com.android.volley:volley:1.2.1")
     implementation("com.google.android.material:material:1.9.0")
     implementation("androidx.constraintlayout:constraintlayout:2.1.4")

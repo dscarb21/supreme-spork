@@ -15,9 +15,11 @@ drawable sunflower
 drawable tree
 id button1
 id button2
+id detailsTextView
 id gridView
 id grid_item_image
 id textView
+layout activity_details
 layout activity_main
 layout grid_item
 mipmap ic_launcher
