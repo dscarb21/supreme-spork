@@ -30,6 +30,8 @@ public class GardenerItem extends GridCell implements Serializable{
             this.resourceID = R.drawable.blank;
             this.cellType = "Blank";
         }
+        this.lastRow = row;
+        this.lastCol = col;
 
         this.gardenerId = calculateGardenerID();
     }
@@ -41,7 +43,9 @@ public class GardenerItem extends GridCell implements Serializable{
             java.sql.Timestamp timestamp = new java.sql.Timestamp(System.currentTimeMillis());
             String historyEntry = "(" + newRow + ", " + newCol + ") " + "[" + timestamp + "]";
             movementHistory.add(historyEntry);
-            Log.d(Integer.toString(gardenerId), "Added move to (" + newRow + ", " + newCol + ")");
+            if (gardenerId == 0) {
+                Log.d(Integer.toString(gardenerId), "Added move to (" + newRow + ", " + newCol + ")");
+            }
             lastRow = newRow;
             lastCol = newCol;
         }
@@ -52,6 +56,11 @@ public class GardenerItem extends GridCell implements Serializable{
         StringBuilder info = new StringBuilder("Selected " + getCellType() + "\nLocation: (" + col + ", " + row +")" + "\nGardener ID: " + gardenerId);
         for (String entry : movementHistory) {
             info.append("\n").append(entry);
+        }
+        if (gardenerId == 0) {
+
+            Log.d(Integer.toString(gardenerId), info.toString());
+
         }
         return info.toString();
     }

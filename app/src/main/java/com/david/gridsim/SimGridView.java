@@ -28,7 +28,9 @@ public class SimGridView {
 
     public void attach(TextView tview, GridView gview) {
         simulationGrid.attach(tview, gview);
-        eventBus.register(this); // Register to EventBus
+        if (!eventBus.isRegistered(this)) {
+            eventBus.register(this); // Register to EventBus only if not already registered
+        }
     }
 
     public void detach() {

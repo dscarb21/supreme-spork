@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onStop() {
         super.onStop();
-        poller.stopPolling(); // Stop polling when the activity is no longer visible
     }
 
     @Override

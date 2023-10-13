@@ -36,6 +36,11 @@ public class Poller {
         if (!scheduler.isShutdown()) {
             stopPolling();
         }
+        RequestQueue queue = Volley.newRequestQueue(context);
+        // Create a new JsonObjectRequest for POST
+        JsonObjectRequest jsonObjectRequest = new JsonObjectRequest(Request.Method.POST, SERVER_URL, null, null, null);
+        queue.add(jsonObjectRequest);
+
         this.context = context;
         scheduler = Executors.newScheduledThreadPool(1);
         scheduler.scheduleAtFixedRate(() -> {
