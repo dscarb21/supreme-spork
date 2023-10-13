@@ -1,5 +1,7 @@
 package com.david.gridsim.Model;
 
+import android.util.Log;
+
 import com.david.gridsim.R;
 
 import java.io.Serializable;
@@ -39,7 +41,7 @@ public class GardenerItem extends GridCell implements Serializable{
             java.sql.Timestamp timestamp = new java.sql.Timestamp(System.currentTimeMillis());
             String historyEntry = "(" + newRow + ", " + newCol + ") " + "[" + timestamp + "]";
             movementHistory.add(historyEntry);
-
+            Log.d(Integer.toString(gardenerId), "Added move to (" + newRow + ", " + newCol + ")");
             lastRow = newRow;
             lastCol = newCol;
         }
