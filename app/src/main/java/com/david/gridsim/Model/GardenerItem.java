@@ -9,13 +9,15 @@ import java.util.LinkedList;
 
 public class GardenerItem extends GridCell implements Serializable{
     private int gardenerId;
-    private LinkedList<String> movementHistory = new LinkedList<>();
+    private LinkedList<String> movementHistory;
     private int lastRow = -1;  // Initialize to invalid values
     private int lastCol = -1;
 
 
     public GardenerItem(int rawServerValue, int row, int col) {
+
         super(rawServerValue, row, col);
+        Log.d("GardenerItem", "Constructed GardenerItem with ID: " + gardenerId + " at (" + row + ", " + col + ")");
 
         if (rawServerValue >= 1000000 && rawServerValue < 2000000) {
             this.resourceID = R.drawable.gardender_icon;
@@ -34,6 +36,7 @@ public class GardenerItem extends GridCell implements Serializable{
         this.lastCol = col;
 
         this.gardenerId = calculateGardenerID();
+        this.movementHistory = new LinkedList<>();
     }
 
 
@@ -46,6 +49,7 @@ public class GardenerItem extends GridCell implements Serializable{
             if (gardenerId == 0) {
                 Log.d(Integer.toString(gardenerId), "Added move to (" + newRow + ", " + newCol + ")");
             }
+            Log.d("Info", getCellInfo());
             lastRow = newRow;
             lastCol = newCol;
         }
@@ -56,11 +60,6 @@ public class GardenerItem extends GridCell implements Serializable{
         StringBuilder info = new StringBuilder("Selected " + getCellType() + "\nLocation: (" + col + ", " + row +")" + "\nGardener ID: " + gardenerId);
         for (String entry : movementHistory) {
             info.append("\n").append(entry);
-        }
-        if (gardenerId == 0) {
-
-            Log.d(Integer.toString(gardenerId), info.toString());
-
         }
         return info.toString();
     }
